@@ -38,7 +38,7 @@ def build_convert_body(
 ) -> Dict[str, Any]:
     """Build the JSON body for ``POST /v3/sdk/{chainId}/convert``.
 
-    Only the three required fields (``receiver``, ``slippage``, ``inputs``,
+    Only the four core fields (``receiver``, ``slippage``, ``inputs``,
     ``outputs``) are always sent; the rest are omitted unless set, so the API's
     own defaults apply. ``extra`` is merged last as an escape hatch for params
     not modelled here.
