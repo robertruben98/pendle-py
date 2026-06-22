@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/robertruben98/pendle-py/actions/workflows/ci.yml/badge.svg)](https://github.com/robertruben98/pendle-py/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/pendle-py.svg)](https://pypi.org/project/pendle-py/)
+[![Docs](https://img.shields.io/badge/docs-online-blue)](https://robertruben98.github.io/pendle-py/)
 [![Python versions](https://img.shields.io/pypi/pyversions/pendle-py.svg)](https://pypi.org/project/pendle-py/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/robertruben98/pendle-py/blob/main/LICENSE)
 
