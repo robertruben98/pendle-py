@@ -6,6 +6,9 @@ from typing import Iterator
 import httpx
 import pytest
 import respx
+
+from pendle import PendleAPIError, PendleClient
+from pendle.constants import ChainId
 from tests.conftest import (
     ACTIVE,
     ASSETS,
@@ -19,9 +22,6 @@ from tests.conftest import (
     RECEIVER,
     SY_ADDR,
 )
-
-from pendle import PendleAPIError, PendleClient
-from pendle.constants import ChainId
 
 
 @pytest.fixture

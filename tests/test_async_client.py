@@ -5,6 +5,8 @@ import json
 import httpx
 import pytest
 import respx
+
+from pendle import AsyncPendleClient, PendleAPIError
 from tests.conftest import (
     ACTIVE,
     ASSETS,
@@ -18,8 +20,6 @@ from tests.conftest import (
     RECEIVER,
     SY_ADDR,
 )
-
-from pendle import AsyncPendleClient, PendleAPIError
 
 
 @respx.mock

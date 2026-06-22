@@ -64,6 +64,11 @@ select = ["E", "F", "I", "UP", "B", "W", "C4", "SIM"]
 # typing.Optional/Union/List/Dict so the models build cleanly on 3.9.
 ignore = ["UP006", "UP007", "UP035", "UP045"]
 
+[tool.ruff.lint.isort]
+# Pin first-party packages so import ordering is deterministic whether or not
+# the package is installed in the linting environment (CI vs. local editable).
+known-first-party = ["pendle", "tests"]
+
 [tool.mypy]
 python_version = "3.10"
 strict = true
