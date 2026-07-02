@@ -343,7 +343,7 @@ class ConvertResponse(_Model):
     Example::
 
         resp = client.swap(
-            chain_id=1, market="0x...", token_in="0x...sy", token_out="0x...pt",
+            chain_id=1, token_in="0x...sy", token_out="0x...pt",
             amount_in="1000000000000000000", receiver="0xYou", slippage=0.01,
         )
         for approval in resp.required_approvals:
