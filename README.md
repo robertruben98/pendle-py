@@ -49,17 +49,17 @@ with PendleClient() as client:
 
     resp = client.swap(
         ChainId.ETHEREUM,
-        token_in=market.sy.address,        # spend SY
-        amount_in="1000000000000000000",   # 1.0 (18 decimals), in wei
-        token_out=market.pt.address,       # receive PT
+        token_in=market.sy.address,  # spend SY
+        amount_in="1000000000000000000",  # 1.0 (18 decimals), in wei
+        token_out=market.pt.address,  # receive PT
         receiver="0xYourAddress",
-        slippage=0.01,                     # 1%
+        slippage=0.01,  # 1%
     )
 
-    print(resp.action)                     # "swap"
+    print(resp.action)  # "swap"
     for approval in resp.required_approvals:
-        ...                                # grant ERC-20 approval first
-    tx = resp.routes[0].tx                 # unsigned tx to sign & broadcast
+        ...  # grant ERC-20 approval first
+    tx = resp.routes[0].tx  # unsigned tx to sign & broadcast
     print(tx.to, tx.data, tx.value)
 ```
 
@@ -69,10 +69,12 @@ with PendleClient() as client:
 import asyncio
 from pendle import AsyncPendleClient
 
+
 async def main():
     async with AsyncPendleClient() as client:
         markets = await client.get_markets(1, limit=5)
         print(markets.total)
+
 
 asyncio.run(main())
 ```
@@ -109,7 +111,7 @@ with PendleClient() as client:
     try:
         client.get_market(1, "0xnot-a-market")
     except PendleAPIError as exc:
-        print(exc.status_code, exc.message)   # 404 'Not Found'
+        print(exc.status_code, exc.message)  # 404 'Not Found'
 ```
 
 Network-level failures propagate as `httpx` exceptions.
@@ -119,7 +121,7 @@ Network-level failures propagate as `httpx` exceptions.
 ```python
 # Custom base URL (e.g. a proxy) and timeout, or inject your own httpx client:
 PendleClient(base_url="https://my-proxy.example/core", timeout=15.0)
-PendleClient(client=my_httpx_client)   # caller owns its lifecycle
+PendleClient(client=my_httpx_client)  # caller owns its lifecycle
 ```
 
 ## Development
